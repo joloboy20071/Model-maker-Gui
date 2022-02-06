@@ -248,18 +248,21 @@ def buttoninactive():
 rice_array2 = ["test-series \n"]
 price_array = []
 
+
 def file():
     txt = easygui.fileopenbox()
     text = open(txt).read()
-    url = text.replace("+", " ").replace("5G", " ").replace(" ", "-").replace("--","").replace("Fan-Edition", "fe").replace("4G", "").replace("Lite","").split("\n")
+    url = text.replace("+", "").replace("5G", " ").replace(" ", "-").replace("--","").replace("Fan-Edition", "fe").replace("4G", "").replace("Lite","").split("\n")
 
     for i in url:
         price_array.append(f"https://www.telefoonmaken.nl/{i}-reparatie/")
         
+
 print("")
 def scherm():
+    
     x = 0
-    while x < 47:
+    while x < 100:
         try:
             HEADERS = ({'User-Agent':
                         'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 \
@@ -288,7 +291,7 @@ def scherm():
 
 def batt():
     y = 0
-    while y < 47:
+    while y < 100:
         try:
             HEADERS = ({'User-Agent':
                         'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 \
@@ -313,7 +316,7 @@ def batt():
             file.write("Op Aanvraag "+"\n")
             y +=1
             filistbox.insert('end',IndexError)
-            fidecdone2()
+            
 
 def pricemake():
     schermt = open("schermen.html","r")
